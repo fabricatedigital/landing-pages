@@ -7,7 +7,7 @@ gulp.task('template:fj', function() {
     .pipe(ejs({
         title: 'FabricateJS',
         description: 'node.js framework',
-        ga: '',
+        ga: 'UA-93839334-3',
         email: 'info@fabricatejs.com'
     }, {}, { ext: '.html' }))
     .pipe(gulp.dest('./fabricatejs.com'))
