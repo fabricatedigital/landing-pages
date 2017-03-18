@@ -24,6 +24,17 @@ gulp.task('template:sl', function() {
     .pipe(gulp.dest('./savantlms.com'))
 });
 
+gulp.task('template:gl', function() {
+  gulp.src('./index.ejs')
+    .pipe(ejs({
+        title: 'Game Library',
+        description: 'curate your game library',
+        ga: 'UA-93839334-5',
+        email: 'info@gamelibrary.io'
+    }, {}, { ext: '.html' }))
+    .pipe(gulp.dest('./gamelibrary.io'))
+});
+
 gulp.task('sass:fj', function (){
   return gulp.src('./scss/fabricatejs/*.scss')
     .pipe(sass({
@@ -40,7 +51,15 @@ gulp.task('sass:sl', function (){
     .pipe(gulp.dest('./savantlms.com/css'));
 });
 
-gulp.task('build', ['template:fj', 'template:sl', 'sass:fj', 'sass:sl']);
+gulp.task('sass:gl', function (){
+  return gulp.src('./scss/gamelibrary/*.scss')
+    .pipe(sass({
+      outputStyle: 'compressed'
+    }).on('error', sass.logError))
+    .pipe(gulp.dest('./gamelibrary.io/css'));
+});
+
+gulp.task('build', ['template:fj', 'template:sl', 'template:gl', 'sass:fj', 'sass:sl', 'sass:gl']);
 
 gulp.task('watch', function() {
   gulp.watch(['./scss/**/*.scss'], ['sass:fj']);
