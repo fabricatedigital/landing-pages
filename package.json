@@ -5,7 +5,9 @@
   "description": "fabricate digital landing pages",
   "main": "index.js",
   "scripts": {
-    "serve:fj": "http-server fabricatejs.com"
+    "build": "gulp build",
+    "serve:fj": "http-server fabricatejs.com",
+    "serve:sl": "http-server savantlms.com"
   },
   "repository": {
     "type": "git",
