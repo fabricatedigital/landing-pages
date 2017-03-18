@@ -35,6 +35,17 @@ gulp.task('template:gl', function() {
     .pipe(gulp.dest('./gamelibrary.io'))
 });
 
+gulp.task('template:cp', function() {
+  gulp.src('./index.ejs')
+    .pipe(ejs({
+        title: 'Command PM',
+        description: 'project management from your command line',
+        ga: 'UA-93839334-6',
+        email: 'info@command.pm'
+    }, {}, { ext: '.html' }))
+    .pipe(gulp.dest('./command.pm'))
+});
+
 gulp.task('sass:fj', function (){
   return gulp.src('./scss/fabricatejs/*.scss')
     .pipe(sass({
@@ -59,7 +70,15 @@ gulp.task('sass:gl', function (){
     .pipe(gulp.dest('./gamelibrary.io/css'));
 });
 
-gulp.task('build', ['template:fj', 'template:sl', 'template:gl', 'sass:fj', 'sass:sl', 'sass:gl']);
+gulp.task('sass:cp', function (){
+  return gulp.src('./scss/commandpm/*.scss')
+    .pipe(sass({
+      outputStyle: 'compressed'
+    }).on('error', sass.logError))
+    .pipe(gulp.dest('./command.pm/css'));
+});
+
+gulp.task('build', ['template:fj', 'template:sl', 'template:gl', 'template:cp', 'sass:fj', 'sass:sl', 'sass:gl', 'sass:cp']);
 
 gulp.task('watch', function() {
   gulp.watch(['./scss/**/*.scss'], ['sass:fj']);
