@@ -46,6 +46,17 @@ gulp.task('template:cp', function() {
     .pipe(gulp.dest('./command.pm'))
 });
 
+gulp.task('template:fc', function() {
+  gulp.src('./index.ejs')
+    .pipe(ejs({
+        title: 'Fabricate CMS',
+        description: 'content management system powered by node.js and mongodb',
+        ga: 'UA-93839334-2',
+        email: 'info@fabricatecms.com'
+    }, {}, { ext: '.html' }))
+    .pipe(gulp.dest('./fabricatecms.com'))
+});
+
 gulp.task('sass:fj', function (){
   return gulp.src('./scss/fabricatejs/*.scss')
     .pipe(sass({
@@ -78,9 +89,40 @@ gulp.task('sass:cp', function (){
     .pipe(gulp.dest('./command.pm/css'));
 });
 
-gulp.task('build', ['template:fj', 'template:sl', 'template:gl', 'template:cp', 'sass:fj', 'sass:sl', 'sass:gl', 'sass:cp']);
+gulp.task('sass:fc', function (){
+  return gulp.src('./scss/fabricatecms/*.scss')
+    .pipe(sass({
+      outputStyle: 'compressed'
+    }).on('error', sass.logError))
+    .pipe(gulp.dest('./fabricatecms.com/css'));
+});
+
+gulp.task('build', [
+  'template:fj',
+  'template:sl',
+  'template:gl',
+  'template:cp',
+  'template:fc',
+  'sass:fj',
+  'sass:sl',
+  'sass:gl',
+  'sass:cp',
+  'sass:fc'
+]);
 
 gulp.task('watch', function() {
-  gulp.watch(['./scss/**/*.scss'], ['sass:fj']);
-  gulp.watch(['./index.ejs'], ['template:fj']);
+  gulp.watch(['./scss/**/*.scss'], [
+    'sass:fj',
+    'sass:sl',
+    'sass:gl',
+    'sass:cp',
+    'sass:fc'
+  ]);
+  gulp.watch(['./index.ejs'], [
+    'template:fj',
+    'template:sl',
+    'template:gl',
+    'template:cp',
+    'template:fc'
+  ]);
 });

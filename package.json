@@ -9,7 +9,8 @@
     "serve:fj": "http-server fabricatejs.com",
     "serve:sl": "http-server savantlms.com",
     "serve:gl": "http-server gamelibrary.io",
-    "serve:cp": "http-server command.pm"
+    "serve:cp": "http-server command.pm",
+    "serve:fc": "http-server fabricatecms.com"
   },
   "repository": {
     "type": "git",
