@@ -15,7 +15,6 @@
     <meta itemprop="description" content="<%= description %>">
     <meta itemprop="image" content="/images/logo.png">
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
 
     <link rel="apple-touch-icon" sizes="57x57" href="/images/apple-icon-57x57.png">
@@ -54,5 +53,13 @@
       <a href="https://fabricatedigital.com" target="_blank">by fabricatedigital.com</a>
       <a href="mailto:<%= email %>" target="_blank" class="align-right"><%= email %></a>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+      WebFont.load({
+        google: {
+          families: ['Roboto:300']
+        }
+      });
+    </script>
   </body>
 </html>
