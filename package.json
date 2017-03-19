@@ -6,6 +6,8 @@
   "main": "index.js",
   "scripts": {
     "build": "gulp build",
+    "watch": "gulp watch",
+    "serve:fd": "http-server fabricatedigital.com",
     "serve:fj": "http-server fabricatejs.com",
     "serve:sl": "http-server savantlms.com",
     "serve:gl": "http-server gamelibrary.io",

@@ -3,7 +3,7 @@ var ejs = require('gulp-ejs');
 var sass = require('gulp-sass');
 
 gulp.task('template:fd', function() {
-  gulp.src('./fabricatedigital.ejs')
+  gulp.src('./index.ejs')
     .pipe(ejs({
         title: 'Fabricate Digital',
         description: 'custom web development',
@@ -146,7 +146,7 @@ gulp.task('watch', function() {
     'sass:cp',
     'sass:fc'
   ]);
-  gulp.watch(['./index.ejs'], [
+  gulp.watch(['./index.ejs', './views/*.ejs'], [
     'template:fd',
     'template:fj',
     'template:sl',
