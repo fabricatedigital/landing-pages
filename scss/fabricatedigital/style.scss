@@ -21,6 +21,26 @@
   }
 }
 
+.social-icon {
+  position: absolute;
+  top: 36px;
+  display: block;
+  padding: 8px;
+  height: 40px;
+  width: 40px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+#twitter-btn {
+  right: 32px;
+}
+
+#facebook-btn {
+  right: 88px;
+}
+
 #open-btn {
   z-index: 10;
 }
