@@ -1,1 +1,9 @@
-# landing-pages
+# Landing pages
+
+### Install
+
+```
+npm install
+npm run build
+npm run watch
+```
