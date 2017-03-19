@@ -1,19 +1,39 @@
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
 body {
   margin: 0;
   padding: 0;
   background-color: #111111;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
+  color: #ffffff;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+
+  &:hover, 
+  &:focus {
+    text-decoration: underline;
+  }
 }
 
 #logo {
   width: 100%;
-
-  @media (min-width: 768px) {
-    position: absolute;
-    top: 50%;
-    margin-top: -85px;
-  }
+  position: absolute;
+  top: 50%;
+  margin-top: -85px;
 
   img {
     margin: 0 auto;
@@ -34,9 +54,4 @@ body {
   padding-left: 32px;
   padding-right: 32px;
   line-height: 32px;
-
-  a {
-    color: #ffffff;
-    text-decoration: none;
-  }
 }

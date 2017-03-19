@@ -1,8 +1,82 @@
-<div id="logo">
-  <img src="/images/logo.png" srcset="/images/logo.png 1x, /images/logo@2x.png 2x, /images/logo@3x.png 3x"" alt="<%= title %>">
-</div>
-sdfsdf
-<div id="footer">
-  <a href="https://fabricatedigital.com" target="_blank">by fabricatedigital.com</a>
-  <a href="mailto:<%= email %>" target="_blank" class="align-right"><%= email %></a>
-</div>
+    <a href="#" class="menu-btn" id="open-btn"><i class="material-icons">menu</i></a>
+    <div id="logo">
+      <img src="/images/logo.png" srcset="/images/logo.png 1x, /images/logo@2x.png 2x, /images/logo@3x.png 3x"" alt="<%= title %>">
+    </div>
+    <div id="footer">
+      <a href="mailto:<%= email %>" target="_blank"><%= email %></a>
+    </div>
+    <nav id="menu">
+      <a href="#" class="menu-btn" id="close-btn"><i class="material-icons">close</i></a>
+      <ul>
+        <li>
+          <a href="https://command.pm" target="_blank" title="Command PM">
+            <img src="/images/products/commandpm.png" 
+              srcset="/images/products/commandpm.png 1x, 
+              /images/products/commandpm@2x.png 2x" 
+              alt="Command PM">
+            command.pm
+          </a>
+        </li>
+        <li>
+          <a href="https://gamelibrary.io" target="_blank" title="Game Library">
+            <img src="/images/products/gamelibrary.png" 
+              srcset="/images/products/gamelibrary.png 1x, 
+              /images/products/gamelibrary@2x.png 2x" 
+              alt="Game Library">
+            gamelibrary.io
+          </a>
+        </li>
+        <li>
+          <a href="https://fabricatecms.com" target="_blank" title="Fabricate CMS">
+            <img src="/images/products/fabricatecms.png" 
+              srcset="/images/products/fabricatecms.png 1x, 
+              /images/products/fabricatecms@2x.png 2x"
+              alt="Fabricate CMS">
+            fabricatecms.com
+          </a>
+        </li>
+        <li>
+          <a href="https://fabricatejs.com" target="_blank" title="FabricateJS">
+            <img src="/images/products/fabricatejs.png" 
+              srcset="/images/products/fabricatejs.png 1x, 
+              /images/products/fabricatejs@2x.png 2x" 
+              alt="FabricateJS">
+            fabricatejs.com
+          </a>
+        </li>
+        <li>
+          <a href="https://savantlms.com" target="_blank" title="Savant LMS">
+            <img src="/images/products/savantlms.png" 
+              srcset="/images/products/savantlms.png 1x, 
+              /images/products/savantlms@2x.png 2x" 
+              alt="Savant LMS">
+            savantlms.com
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+      WebFont.load({
+        google: {
+          families: ['Roboto:300', 'Material Icons']
+        }
+      });
+    </script>
+    <script>
+      (function() {
+        var menu = document.getElementById('menu');
+
+        var openBtn = document.getElementById('open-btn');
+        openBtn.onclick = function() {
+          menu.className = 'open';
+          return false;
+        }
+
+        var closeBtn = document.getElementById('close-btn');
+        closeBtn.onclick = function() {
+          menu.className = '';
+          return false;
+        }
+      })();
+    </script>
