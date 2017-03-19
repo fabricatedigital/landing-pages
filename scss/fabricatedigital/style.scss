@@ -1,0 +1,10 @@
+@import "../../node_modules/normalize.css/normalize";
+@import "../shared";
+
+#footer {
+  @media (min-width: 400px) {
+    .align-right {
+      float: right;
+    }
+  }
+}
