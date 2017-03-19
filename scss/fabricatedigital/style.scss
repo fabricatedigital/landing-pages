@@ -23,14 +23,14 @@
 
 .social-icon {
   position: absolute;
-  top: 36px;
+  top: 40px;
   display: block;
   padding: 8px;
-  height: 40px;
-  width: 40px;
+  height: 32px;
+  width: 32px;
   color: #ffffff;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 16px;
 }
 
 #twitter-btn {
@@ -38,7 +38,15 @@
 }
 
 #facebook-btn {
-  right: 88px;
+  right: 80px;
+}
+
+#github-btn {
+  right: 128px;
+}
+
+#npm-btn {
+  right: 178px;
 }
 
 #open-btn {
